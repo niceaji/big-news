@@ -104,7 +104,7 @@ console.log(apiUrl)
 
     $('#btn-configsave').click(function(){
 
-        $.cookie('cp',  $('#cp-selector ').val());
+        $.cookie('cp',  $('#cp-selector ').val(),{expires: 365});
         location.reload();
         // $('#configbox').modal('hide');
     });

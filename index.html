@@ -10,46 +10,57 @@
 </head>
 <body>
 
-
-
 <div class="main">
-  
   <div id="overview" class="box">
       <h1 id="title"></h1>
+
   </div>
 
   <div id="btnbox">
-    <a id="btn-list"  data-toggle="modal" title="리스트 보기" rel="tooltip" class="btn btn-small btn-info"><i class="icon-th-list"></i></a>
-    <a id="btn-refresh" title="랜덤 빅뉴스 보기" rel="tooltip" class="btn btn-small"><i class="icon-refresh"></i></a>
+    <a id="btn-list"   title="리스트 보기" rel="tooltip" class="btn btn-small btn-info"><i class="icon-th-list"></i></a>
+    <a id="btn-random" title="랜덤 빅뉴스 보기" rel="tooltip" class="btn btn-small"><i class="icon-random"></i></a>
+
+    <a id="btn-config" href="#configbox" data-toggle="modal" title="설정" rel="tooltip" class="btn btn-small"><i class="icon-wrench"></i></a>
     <a id="btn-info" title="이곳은?" rel="tooltip" class="btn btn-small"><i class="icon-info-sign"></i></a>
   </div>
-
 </div>
 
 
 <div id="listbox" class="hide"></div>
 
-<script id="news-template" type="text/template">
-<div class="box" vid="${vid}">
-  <img src="${imageUrl}" class="img-rounded" />
-  <h5>${title}<h5>
-</div>
-</script>
-
-<!-- <div id="listbox" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-
+ 
+<div id="configbox" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+    <h3>설정</h3>
+  </div>
   <div class="modal-body">
-    <div class="modal-header">
-      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-      <h3 id="myModalLabel">List</h3>
-    </div>
-    <div>
-      <div>dddd</div>
-      <div>dddd</div>
-    </div>
+    <p>
+      언론사 선택  
+      <select id="cp-selector">
+        <option value="all">모두보기</option>
+        <option value="mbc">MBC</option>
+        <option value="sbs">SBS</option>
+        <option value="ytn">YTN</option>
+        <option value="yonhap">연합뉴스</option>
+        <option value="mbn">MBN</option>
+        <option value="kedtv">한국경제TV</option>
+      </select> 
+    </p>
+  </div>
+  <div class="modal-footer">
+    <a data-dismiss="modal" aria-hidden="true" class="btn">닫기</a>
+    <a id="btn-configsave" class="btn btn-primary">저장</a>
   </div>
 </div>
- -->
+
+
+<script id="news-template" type="text/template">
+  <div class="box" vid="${vid}">
+    <img src="${imageUrl}" class="img-rounded" />
+    <h5>${title}<h5>
+  </div>
+</script>
 
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
 <script src="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.1.0/js/bootstrap.min.js"></script>

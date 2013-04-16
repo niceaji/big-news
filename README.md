@@ -1,1 +1,1 @@
-http://niceaji7.github.com/big-news/
+http://niceaji.github.com/big-news/
